@@ -1,0 +1,148 @@
+% simon.dobnik@gu.se
+
+\documentclass[aspectratio=1610]{beamer} % check that the right logo is selected below
+% \documentclass[aspectratio=169]{beamer}
+
+\usepackage{graphicx,xcolor,hyperref,natbib}
+\usepackage[utf8]{inputenc}
+
+\usepackage{pgf}
+% 16:10
+\logo{\pgfputat{\pgfxy(-0.5,7.82)}{\pgfbox[right,base]{\includegraphics[height=1.5cm]{pics/GU-logo.pdf}}} \pgfputat{\pgfxy(-0.5,0)}{\pgfbox[right,base]{\includegraphics[height=0.5cm]{pics/CLASP-grey.pdf}}}}
+% 16:9
+% \logo{\pgfputat{\pgfxy(-0.5,6.82)}{\pgfbox[right,base]{\includegraphics[height=1.5cm]{pics/GU-logo.pdf}}} \pgfputat{\pgfxy(-0.5,0)}{\pgfbox[right,base]{\includegraphics[height=0.5cm]{pics/CLASP_Ordbild_grey.pdf}}}}
+
+% Use a dark theme
+
+% \usecolortheme[snowy]{owl} % light
+\usecolortheme{owl} % dark
+
+%% Colours the GU way
+
+\definecolor{guDarkBlue}{cmyk}{1,0.75,0.15,0} % GU dark blue
+\definecolor{guDarkRed}{cmyk}{0,0.91,0.56,0.34} % GU dark red
+\definecolor{guBlueGray}{cmyk}{0.185,0,0,0.27} % GU blue gray
+\definecolor{guYellow}{cmyk}{0.11,0,1,0.11} % GU yellow
+\definecolor{guDarkBrown}{cmyk}{0.50,0.85,1,0.35} % GU dark brown
+\definecolor{guLightBrown}{cmyk}{0,0.56,0.94,0.34} % GU light brown
+\definecolor{guOrange}{cmyk}{0,0.47,1,0.08} % GU orange
+
+% The title
+
+\setbeamercolor*{frametitle}{
+  use=palette primary, parent=transparent, fg=blue % guDarkBlue
+}
+
+% Links
+
+\hypersetup{colorlinks,linkcolor=blue,urlcolor=blue,citecolor=white} % guDarkBlue
+
+% Bullets
+
+\setbeamertemplate{itemize item}{\color{blue}$\bullet$}
+\setbeamertemplate{itemize subitem}{\color{white}$\circ$}
+
+% The highlight command
+
+% \newcommand{\highlight}[1]{{\usebeamercolor[fg]{frametitle}{#1}}}
+\newcommand{\highlight}[1]{{\color{blue}#1}}
+
+
+
+%% Frame number for each slide
+
+\setbeamertemplate{footline}[frame number]
+
+
+
+
+
+\title{\color{blue} The title}
+
+\author{First Author$^{12}$ \and Second Author$^{1}$ \\
+        $^{1}$Department of Philosophy, Linguistics and Theory of Science \\ 
+        $^{2}$Centre for Linguistic Theory and Studies in Probability (CLASP) \\
+        University of Gothenburg, Sweden \\
+      \texttt{\{name.surname\}@gu.se}}
+
+\date{Presented at, \today}
+
+
+
+
+
+\begin{document}
+
+
+
+\frame[plain]{\titlepage}
+
+
+
+
+
+% \frame[plain]{\frametitle{Outline}\tableofcontents}
+
+
+
+
+
+\begin{frame}
+
+\frametitle{Introduction}
+
+In this talk we present our great idea.
+
+\begin{itemize}
+  
+\item First item
+
+\item Second item
+  \begin{itemize}
+
+  \item I'm a sub-item.
+
+  \end{itemize}
+
+\end{itemize}
+
+\bigskip
+
+We can also highlight \highlight{important parts}.
+
+
+\end{frame}
+
+
+
+
+
+%% References
+
+\begin{frame}[allowframebreaks]{References}
+
+\small
+
+% Bibliography
+
+\bibliographystyle{acl_natbib}
+\bibliography{bibliography}
+
+
+\end{frame}
+
+
+
+
+
+\end{document}
+
+
+%%% Local Variables:
+%%% mode: latex
+%%% mode: flyspell
+%%% TeX-master: t
+%%% TeX-PDF-mode: t
+%%% coding: utf-8
+%%% ispell-local-dictionary: "british"
+%%% End:
