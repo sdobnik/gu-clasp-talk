@@ -1,0 +1,89 @@
+% File: gu-slides.sty
+% Contact: simon.dobnik@gu.se
+% Useful instructions: https://www.overleaf.com/learn/latex/Writing_your_own_package
+
+\NeedsTeXFormat{LaTeX2e}
+\ProvidesPackage{gu-slides}[2021/12/08 GU slides]
+
+\RequirePackage{xcolor}
+
+\RequirePackage{pgf}
+
+
+% Defines a logo which depends on the input option: 1610 or 169
+
+\DeclareOption{1610}{\logo{\pgfputat{\pgfxy(-0.5,7.82)}{\pgfbox[right,base]{\includegraphics[height=1.5cm]{pics/GU-logo.pdf}}} \pgfputat{\pgfxy(-0.5,0)}{\pgfbox[right,base]{\includegraphics[height=0.5cm]{pics/CLASP-grey.pdf}}}}}
+\DeclareOption{169}{\logo{\pgfputat{\pgfxy(-0.5,6.82)}{\pgfbox[right,base]{\includegraphics[height=1.5cm]{pics/GU-logo.pdf}}} \pgfputat{\pgfxy(-0.5,0)}{\pgfbox[right,base]{\includegraphics[height=0.5cm]{pics/CLASP-grey.pdf}}}}}
+\DeclareOption*{\PackageWarning{gu-slides}{Unknown ‘\CurrentOption’}}
+\ProcessOptions\relax
+
+
+%% Colours the GU way
+
+\definecolor{guDarkBlue}{cmyk}{1,0.75,0.15,0} % GU dark blue
+\definecolor{guDarkRed}{cmyk}{0,0.91,0.56,0.34} % GU dark red
+\definecolor{guBlueGray}{cmyk}{0.185,0,0,0.27} % GU blue gray
+\definecolor{guYellow}{cmyk}{0.11,0,1,0.11} % GU yellow
+\definecolor{guDarkBrown}{cmyk}{0.50,0.85,1,0.35} % GU dark brown
+\definecolor{guLightBrown}{cmyk}{0,0.56,0.94,0.34} % GU light brown
+\definecolor{guOrange}{cmyk}{0,0.47,1,0.08} % GU orange
+
+
+% The title
+
+\setbeamercolor*{frametitle}{
+  use=palette primary, parent=transparent, fg=guDarkBlue
+}
+
+\setbeamercolor*{title}{fg=guDarkBlue}
+
+
+% Links
+
+\hypersetup{colorlinks,linkcolor=guDarkBlue,urlcolor=guDarkBlue,citecolor=black}
+
+
+% Bullets
+
+\setbeamertemplate{itemize item}{\color{guDarkBlue}$\bullet$}
+\setbeamertemplate{itemize subitem}{\color{black}$\circ$}
+
+
+% The highlight command
+
+\newcommand{\highlight}[1]{{\usebeamercolor[fg]{frametitle}{#1}}}
+%\newcommand{\highlight}[1]{{\color{guDarkBlue}#1}}
+
+
+% Frame number for each slide
+
+\setbeamertemplate{footline}[frame number]
+
+
+% % Create a section slide
+
+% \AtBeginSection[]
+% {
+% \begin{frame}[plain]
+
+% {\huge\color{guDarkBlue}\insertsectionhead}
+
+% \end{frame}
+% }
+
+
+% Alternative higlighting the current section in a TOC
+
+\AtBeginSection[]
+{
+   \begin{frame}[plain]
+       \frametitle{Outline}
+       \tableofcontents[currentsection]
+   \end{frame}
+}
+
+
+% Makes \fbox fit more closely the pictures. Added only for compatibility. It is better to use \frame now.
+
+\setlength\fboxrule{1pt}
+\setlength\fboxsep{0mm} 
