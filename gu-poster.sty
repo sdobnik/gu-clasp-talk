@@ -1,0 +1,113 @@
+% File: gu-poster.sty
+% Contact: simon.dobnik@gu.se
+% Useful instructions: https://www.overleaf.com/learn/latex/Writing_your_own_package
+
+\NeedsTeXFormat{LaTeX2e}
+\ProvidesPackage{gu-poster}[2022/08/03 GU poster]
+
+\RequirePackage{multicol}
+
+\RequirePackage{graphicx}
+
+\RequirePackage[utf8]{inputenc}
+
+\RequirePackage{xcolor}
+
+\RequirePackage{sectsty}
+
+\RequirePackage{hyperref}
+
+\RequirePackage{enumitem}
+
+\RequirePackage[helvet]{sfmath}
+\everymath={\sf}
+
+\RequirePackage[T1]{fontenc}
+
+\RequirePackage{natbib}
+
+
+
+%% Logos
+
+\noleftlogo
+
+% The default logo command does not place the logo on the edge of the page. Using our own placement.
+
+% \rightlogo[1]{pics/GU-logo.pdf}
+
+\renewcommand{\footlogo}{
+  \resizebox{\logowidth}{!}{\includegraphics{pics/CLASP}}
+}
+
+
+
+%% Colours the GU way
+
+\definecolor{guDarkBlue}{cmyk}{1,0.75,0.15,0} % GU dark blue
+\definecolor{guDarkRed}{cmyk}{0,0.91,0.56,0.34} % GU dark red
+\definecolor{guBlueGray}{cmyk}{0.185,0,0,0.27} % GU blue gray
+\definecolor{guYellow}{cmyk}{0.11,0,1,0.11} % GU yellow
+\definecolor{guDarkBrown}{cmyk}{0.50,0.85,1,0.35} % GU dark brown
+\definecolor{guLightBrown}{cmyk}{0,0.56,0.94,0.34} % GU light brown
+\definecolor{guOrange}{cmyk}{0,0.47,1,0.08} % GU orange
+
+
+
+% Links
+
+\hypersetup{colorlinks,linkcolor=guDarkBlue,urlcolor=guDarkBlue,citecolor=black}
+
+
+
+% The highlight command
+
+\newcommand{\highlight}[1]{{\color{guDarkBlue}#1}}
+
+
+
+% The spacing and lines between the columns
+
+% \setlength{\columnsep}{20pt}
+\setlength{\columnseprule}{0.01pt}
+%\renewcommand{\columnseprulecolor}{\color[rgb]{0.9,0.9,0.9}}
+\renewcommand{\columnseprulecolor}{\color{guBlueGray}}
+
+
+
+% The colour of titles
+
+%\chapterfont{\color{blue}}  % sets colour of chapters
+\sectionfont{\centering\color{guDarkBlue}\LARGE}  % sets colour of sections
+\subsectionfont{\color{guDarkBlue}\Large\textbf}  % sets colour of subsections
+
+
+
+% Bullets
+
+\renewcommand{\labelitemi}{\color{guDarkBlue}$\bullet$\quad}
+\renewcommand{\labelitemii}{\color{black}$\circ$\quad}
+\renewcommand{\labelitemiii}{\color{black}{$\diamond$}\quad}
+\renewcommand{\labelitemiv}{\color{black}{$\ast$}\quad}
+
+
+
+% Makes \fbox fit pictures. Added only for compatibility. It is better to use \frame now.
+
+\setlength\fboxrule{1pt}
+\setlength\fboxsep{0mm} 
+
+
+
+% Paragraph spacing
+
+\setlength{\parindent}{0pt}
+\setlength{\parskip}{\baselineskip}
+
+
+
+% Fixes itemize which has lost its indent.
+
+\newenvironment{myitemize}
+    {\begin{itemize}[leftmargin=20mm]}
+    {\end{itemize}}

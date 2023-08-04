@@ -1,0 +1,143 @@
+% simon.dobnik@gu.se
+
+
+\documentclass[a0,36pt,plainsections]{sciposter}
+\usepackage{gu-poster}
+\usepackage{tikz}
+
+
+%% For formatting options see gu-poster.sty.
+
+%% For commands available in the poster document class see: https://ctan.ijs.si/tex-archive/macros/latex/contrib/sciposter/scipostermanual.pdf
+
+
+
+
+
+%% The header
+
+\title{Title, first line \\ \vspace{-2.25cm} Title, second line}
+
+\author{First Author$^{12}$ and Second Author$^{1}$}
+
+\institute{$^{1}$Department of Philosophy, Linguistics and Theory of Science \\ 
+  $^{2}$Centre for Linguistic Theory and Studies in Probability (CLASP) \\
+  University of Gothenburg, Sweden
+}
+
+\email{\{name.surname\}@gu.se}
+
+% Conference name in the footer
+\conference{Conference}
+
+% Adjust the font size if necessary
+
+\renewcommand{\titlesize}{\huge}
+% \renewcommand{\authorsize}{\Large}
+% \renewcommand{\instsize}{\large}
+
+
+
+
+
+\begin{document}
+
+
+\maketitle
+
+
+% Places the logo to the edge of the page
+
+\begin{tikzpicture}[remember picture,overlay] 
+  \node [anchor=north east] at ([xshift=-6cm,yshift=-2cm]current page.north east) {\includegraphics[height=8cm]{pics/GU-logo.pdf}};
+  % \node [anchor=north east, inner sep=2.5cm] at ([xshift=-4cm,yshift=0cm]current page.north east)     {\includegraphics[height=8cm]{pics/GU-logo.pdf}}; 
+\end{tikzpicture} 
+
+
+% Begin of multicols-environment
+\begin{multicols}{2}
+
+
+% Let's make the font slightly larger from default
+% \large
+
+
+
+
+
+\section{Aims}
+
+\begin{myitemize}
+
+\item Investigate \ldots
+  
+\item Create \ldots
+
+\item Evaluate \ldots
+  
+\end{myitemize}
+
+
+
+
+
+\section{Section 1}
+
+\begin{myitemize}
+
+\item Something
+
+\item Something else
+  
+\item \ldots and something else.
+  
+\end{myitemize}
+
+
+% Images side-by-side
+
+\begin{minipage}[c]{.5\linewidth}
+  % \includegraphics[width=\linewidth]{...}
+  Image 1
+\end{minipage}%
+\begin{minipage}[c]{.5\linewidth}
+  %\includegraphics[width=\linewidth]{...}
+  Image 2
+\end{minipage}
+
+
+
+
+
+%% \section*{Acknowledgements}
+
+
+
+
+
+%% Bibliography
+
+\small
+
+\bibliographystyle{acl_natbib}
+\bibliography{references.bib}
+
+
+
+
+
+\end{multicols}
+
+
+\end{document}
+
+
+
+%%% Local Variables:
+%%% mode: latex
+%%% mode: flyspell
+%%% TeX-master: t
+%%% TeX-PDF-mode: t
+%%% coding: utf-8
+%%% ispell-local-dictionary: "british"
+%%% End:
